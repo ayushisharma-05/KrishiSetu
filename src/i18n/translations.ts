@@ -1,0 +1,261 @@
+// Translations for KrishiSetu (11 languages).
+// For brevity, less common keys fall back to English when not translated.
+// Native script preserved for all language names + key headings.
+
+export type LangCode =
+  | "en" | "hi" | "bn" | "mr" | "te" | "ta" | "gu" | "ur" | "kn" | "or" | "ml";
+
+export const LANGUAGES: { code: LangCode; native: string; english: string; rtl?: boolean }[] = [
+  { code: "en", native: "English", english: "English" },
+  { code: "hi", native: "हिंदी", english: "Hindi" },
+  { code: "bn", native: "বাংলা", english: "Bengali" },
+  { code: "mr", native: "मराठी", english: "Marathi" },
+  { code: "te", native: "తెలుగు", english: "Telugu" },
+  { code: "ta", native: "தமிழ்", english: "Tamil" },
+  { code: "gu", native: "ગુજરાતી", english: "Gujarati" },
+  { code: "ur", native: "اردو", english: "Urdu", rtl: true },
+  { code: "kn", native: "ಕನ್ನಡ", english: "Kannada" },
+  { code: "or", native: "ଓଡ଼ିଆ", english: "Odia" },
+  { code: "ml", native: "മലയാളം", english: "Malayalam" },
+];
+
+type Dict = Record<string, string>;
+
+const en: Dict = {
+  explore_features: "Explore Features", try_it_now: "Try it now",
+  feature_crop_title: "Crop Planning", feature_crop_desc: "AI-driven recommendations based on soil & climate.",
+  feature_harvest_title: "Harvest Tracking", feature_harvest_desc: "Predict optimal harvest windows.",
+  feature_pest_title: "Pest Alerts", feature_pest_desc: "Real-time risk warnings for your region.",
+  feature_market_title: "Market Prices", feature_market_desc: "Live Mandi rates and trend forecasting.",
+  feature_water_title: "Water Planner", feature_water_desc: "Smart irrigation schedules to save water.",
+  based_on_soil: "Based on your soil & location", see_all: "See all →",
+  app_name: "KrishiSetu",
+  tagline: "Smart farming for Indian farmers",
+  nav_home: "Home", nav_crop: "Crop Planning", nav_harvest: "Harvest",
+  nav_pest: "Pest Alert", nav_market: "Market", nav_water: "Water Planner", nav_profile: "Profile",
+  welcome_msg: "Namaste", location_label: "Location", season_label: "Season",
+  temp_label: "Temperature", rain_prob: "Rain Probability", humidity: "Humidity", wind_speed: "Wind Speed",
+  todays_irrigation: "Today's Irrigation Need", top_mandi_price: "Top Mandi Price",
+  pest_risk_level: "Pest Risk Level", recommended_crops: "AI Crop Recommendations",
+  confidence: "Confidence", expected_profit: "Expected Profit", water_need: "Water Need",
+  risk_low: "Low", risk_medium: "Medium", risk_high: "High",
+  btn_recommend: "Get Recommendations", btn_reset: "Reset",
+  btn_download_pdf: "Download PDF", btn_whatsapp_share: "Share on WhatsApp",
+  btn_subscribe_alert: "Subscribe to Alerts", btn_check_pest: "Check Pest Risk",
+  btn_predict_harvest: "Predict Harvest Date", btn_calculate_roi: "Calculate ROI",
+  btn_voice_input: "Voice Input",
+  input_crop: "Crop", input_location: "Location", input_land_size: "Land Size",
+  input_soil_type: "Soil Type", input_season: "Season", input_sowing_date: "Sowing Date",
+  input_budget: "Budget", input_water_source: "Water Source", input_npk: "Soil NPK",
+  harvest_date: "Predicted Harvest Date", days_remaining: "Days Remaining",
+  growth_stage: "Growth Stage", weather_risk: "Weather Risk",
+  fertilizer_combo: "Recommended Fertilizer", yield_gain: "Expected Yield Gain",
+  roi_label: "ROI", investment: "Investment", expected_revenue: "Expected Revenue", net_profit: "Net Profit",
+  mandi_today: "Today's Price", mandi_forecast: "30-Day Forecast",
+  mandi_confidence: "Forecast Confidence", best_sell_window: "Best Sell Window", msp_label: "MSP",
+  daily_water: "Today's Water Need", pump_runtime: "Pump Run Time",
+  weekly_total: "Weekly Total", season_total: "Season Total",
+  water_saved: "Water Saved", drought_risk: "Drought Risk",
+  alert_pest_warning: "Pest warning", alert_rain_expected: "Rain expected",
+  alert_market_movement: "Market movement",
+  login: "Login", logout: "Logout", signup: "Sign Up",
+  email: "Email", password: "Password", phone: "Phone Number", farmer_name: "Full Name",
+  error_required: "This field is required", error_invalid: "Invalid value",
+  success_saved: "Saved successfully", loading: "Loading…",
+};
+
+const hi: Dict = {
+  explore_features: "सुविधाएं खोजें", try_it_now: "अभी आज़माएं",
+  feature_crop_title: "फसल योजना", feature_crop_desc: "मिट्टी और जलवायु के आधार पर एआई सिफारिशें।",
+  feature_harvest_title: "कटाई ट्रैकिंग", feature_harvest_desc: "कटाई के सर्वोत्तम समय का अनुमान।",
+  feature_pest_title: "कीट अलर्ट", feature_pest_desc: "आपके क्षेत्र के लिए रीयल-टाइम जोखिम चेतावनी।",
+  feature_market_title: "मंडी भाव", feature_market_desc: "लाइव मंडी रेट और भविष्यवाणियां।",
+  feature_water_title: "जल योजना", feature_water_desc: "पानी बचाने के लिए स्मार्ट सिंचाई कार्यक्रम।",
+  based_on_soil: "आपकी मिट्टी और स्थान के आधार पर", see_all: "सभी देखें →",
+  app_name: "कृषिसेतु", tagline: "भारतीय किसानों के लिए स्मार्ट खेती",
+  nav_home: "होम", nav_crop: "फसल योजना", nav_harvest: "कटाई",
+  nav_pest: "कीट अलर्ट", nav_market: "बाज़ार", nav_water: "जल योजना", nav_profile: "प्रोफ़ाइल",
+  welcome_msg: "नमस्ते", location_label: "स्थान", season_label: "मौसम",
+  temp_label: "तापमान", rain_prob: "वर्षा संभावना", humidity: "नमी", wind_speed: "हवा की गति",
+  todays_irrigation: "आज की सिंचाई आवश्यकता", top_mandi_price: "उच्चतम मंडी भाव",
+  pest_risk_level: "कीट जोखिम स्तर", recommended_crops: "AI फसल सिफारिशें",
+  confidence: "विश्वास", expected_profit: "अपेक्षित लाभ", water_need: "पानी की आवश्यकता",
+  risk_low: "कम", risk_medium: "मध्यम", risk_high: "उच्च",
+  btn_recommend: "सिफारिशें पाएं", btn_reset: "रीसेट",
+  btn_download_pdf: "PDF डाउनलोड", btn_whatsapp_share: "WhatsApp पर साझा करें",
+  btn_subscribe_alert: "अलर्ट सब्सक्राइब करें", btn_check_pest: "कीट जोखिम जांचें",
+  btn_predict_harvest: "कटाई तिथि अनुमान", btn_calculate_roi: "ROI गणना",
+  btn_voice_input: "आवाज़ इनपुट",
+  input_crop: "फसल", input_location: "स्थान", input_land_size: "भूमि आकार",
+  input_soil_type: "मिट्टी प्रकार", input_season: "मौसम", input_sowing_date: "बुवाई तिथि",
+  input_budget: "बजट", input_water_source: "जल स्रोत", input_npk: "मिट्टी NPK",
+  harvest_date: "अनुमानित कटाई तिथि", days_remaining: "शेष दिन",
+  growth_stage: "विकास चरण", weather_risk: "मौसम जोखिम",
+  fertilizer_combo: "अनुशंसित उर्वरक", yield_gain: "अपेक्षित उपज वृद्धि",
+  roi_label: "ROI", investment: "निवेश", expected_revenue: "अपेक्षित आय", net_profit: "शुद्ध लाभ",
+  mandi_today: "आज का भाव", mandi_forecast: "30-दिन पूर्वानुमान",
+  mandi_confidence: "पूर्वानुमान विश्वास", best_sell_window: "सर्वोत्तम विक्रय अवधि", msp_label: "MSP",
+  daily_water: "आज की जल आवश्यकता", pump_runtime: "पंप चलने का समय",
+  weekly_total: "साप्ताहिक कुल", season_total: "मौसम कुल",
+  water_saved: "पानी की बचत", drought_risk: "सूखा जोखिम",
+  alert_pest_warning: "कीट चेतावनी", alert_rain_expected: "बारिश अपेक्षित",
+  alert_market_movement: "बाज़ार में हलचल",
+  login: "लॉगिन", logout: "लॉगआउट", signup: "साइन अप",
+  email: "ईमेल", password: "पासवर्ड", phone: "फ़ोन नंबर", farmer_name: "पूरा नाम",
+  error_required: "यह फ़ील्ड आवश्यक है", error_invalid: "अमान्य मान",
+  success_saved: "सफलतापूर्वक सहेजा गया", loading: "लोड हो रहा है…",
+};
+
+const bn: Dict = {
+  explore_features: "বৈশিষ্ট্যগুলি অন্বেষণ করুন", try_it_now: "এখন চেষ্টা করুন",
+  feature_crop_title: "ফসল পরিকল্পনা", feature_crop_desc: "মাটি এবং জলবায়ুর উপর ভিত্তি করে এআই সুপারিশ।",
+  feature_harvest_title: "ফসল কাটা ট্র্যাকিং", feature_harvest_desc: "সর্বোত্তম ফসল কাটার সময় পূর্বাভাস।",
+  feature_pest_title: "কীট সতর্কতা", feature_pest_desc: "আপনার অঞ্চলের জন্য রিয়েল-টাইম ঝুঁকির সতর্কতা।",
+  feature_market_title: "বাজার দর", feature_market_desc: "লাইভ মান্ডি দর এবং পূর্বাভাস।",
+  feature_water_title: "জল পরিকল্পনা", feature_water_desc: "জল বাঁচাতে স্মার্ট সেচ সময়সূচী।",
+  based_on_soil: "আপনার মাটি এবং অবস্থানের উপর ভিত্তি করে", see_all: "সব দেখুন →",
+  app_name: "কৃষিসেতু", tagline: "ভারতীয় কৃষকদের জন্য স্মার্ট কৃষি",
+  nav_home: "হোম", nav_crop: "ফসল পরিকল্পনা", nav_harvest: "ফসল কাটা",
+  nav_pest: "কীট সতর্কতা", nav_market: "বাজার", nav_water: "জল পরিকল্পনা", nav_profile: "প্রোফাইল",
+  welcome_msg: "নমস্কার", login: "লগইন", signup: "সাইন আপ", logout: "লগআউট",
+  email: "ইমেল", password: "পাসওয়ার্ড", phone: "ফোন নম্বর", farmer_name: "পুরো নাম",
+  recommended_crops: "AI ফসল সুপারিশ", todays_irrigation: "আজকের সেচ প্রয়োজন",
+  top_mandi_price: "শীর্ষ মান্ডি মূল্য", pest_risk_level: "কীট ঝুঁকির স্তর",
+  risk_low: "কম", risk_medium: "মাঝারি", risk_high: "উচ্চ", loading: "লোড হচ্ছে…",
+};
+
+const mr: Dict = {
+  explore_features: "वैशिष्ट्ये एक्सप्लोर करा", try_it_now: "आता वापरून पहा",
+  feature_crop_title: "पीक नियोजन", feature_crop_desc: "माती आणि हवामानावर आधारित एआय शिफारसी.",
+  feature_harvest_title: "कापणी ट्रॅकिंग", feature_harvest_desc: "कापणीच्या योग्य वेळेचा अंदाज.",
+  feature_pest_title: "कीड अलर्ट", feature_pest_desc: "तुमच्या प्रदेशासाठी रिअल-टाइम धोक्याचा इशारा.",
+  feature_market_title: "बाजार भाव", feature_market_desc: "थेट बाजार भाव आणि अंदाज.",
+  feature_water_title: "पाणी नियोजन", feature_water_desc: "पाणी वाचवण्यासाठी स्मार्ट सिंचन वेळापत्रक.",
+  based_on_soil: "तुमच्या माती आणि स्थानावर आधारित", see_all: "सर्व पहा →",
+  app_name: "कृषिसेतू", tagline: "भारतीय शेतकऱ्यांसाठी स्मार्ट शेती",
+  nav_home: "मुख्यपृष्ठ", nav_crop: "पीक नियोजन", nav_harvest: "कापणी",
+  nav_pest: "कीड अलर्ट", nav_market: "बाजार", nav_water: "पाणी नियोजन", nav_profile: "प्रोफाइल",
+  welcome_msg: "नमस्कार", login: "लॉगिन", signup: "साइन अप", logout: "लॉगआउट",
+  email: "ईमेल", password: "पासवर्ड", phone: "फोन नंबर", farmer_name: "पूर्ण नाव",
+  risk_low: "कमी", risk_medium: "मध्यम", risk_high: "उच्च", loading: "लोड होत आहे…",
+};
+
+const te: Dict = {
+  explore_features: "ఫీచర్లను అన్వేషించండి", try_it_now: "ఇప్పుడే ప్రయత్నించండి",
+  feature_crop_title: "పంట ప్రణాళిక", feature_crop_desc: "నేల మరియు వాతావరణం ఆధారంగా AI సిఫార్సులు.",
+  feature_harvest_title: "కోత ట్రాకింగ్", feature_harvest_desc: "సరైన కోత సమయాన్ని అంచనా వేయండి.",
+  feature_pest_title: "పురుగు హెచ్చరికలు", feature_pest_desc: "మీ ప్రాంతానికి రియల్-టైమ్ రిస్క్ హెచ్చరికలు.",
+  feature_market_title: "మార్కెట్ ధరలు", feature_market_desc: "లైవ్ మండి ధరలు మరియు అంచనాలు.",
+  feature_water_title: "నీటి ప్రణాళిక", feature_water_desc: "నీటిని ఆదా చేయడానికి స్మార్ట్ నీటిపారుదల షెడ్యూల్.",
+  based_on_soil: "మీ నేల మరియు స్థానం ఆధారంగా", see_all: "అన్నీ చూడండి →",
+  app_name: "కృషిసేతు", tagline: "భారతీయ రైతుల కోసం స్మార్ట్ వ్యవసాయం",
+  nav_home: "హోమ్", nav_crop: "పంట ప్రణాళిక", nav_harvest: "కోత",
+  nav_pest: "పురుగు హెచ్చరిక", nav_market: "మార్కెట్", nav_water: "నీటి ప్రణాళిక", nav_profile: "ప్రొఫైల్",
+  welcome_msg: "నమస్తే", login: "లాగిన్", signup: "సైన్ అప్", logout: "లాగౌట్",
+  email: "ఇమెయిల్", password: "పాస్‌వర్డ్", phone: "ఫోన్ నంబర్", farmer_name: "పూర్తి పేరు",
+  risk_low: "తక్కువ", risk_medium: "మధ్యస్థ", risk_high: "ఎక్కువ", loading: "లోడ్ అవుతోంది…",
+};
+
+const ta: Dict = {
+  explore_features: "அம்சங்களை ஆராயுங்கள்", try_it_now: "இப்போது முயற்சிக்கவும்",
+  feature_crop_title: "பயிர் திட்டம்", feature_crop_desc: "மண் மற்றும் காலநிலை அடிப்படையில் AI பரிந்துரைகள்.",
+  feature_harvest_title: "அறுவடை கண்காணிப்பு", feature_harvest_desc: "சரியான அறுவடை நேரத்தை கணிக்கவும்.",
+  feature_pest_title: "பூச்சி எச்சரிக்கைகள்", feature_pest_desc: "உங்கள் பகுதிக்கான நிகழ்நேர ஆபத்து எச்சரிக்கைகள்.",
+  feature_market_title: "சந்தை விலைகள்", feature_market_desc: "நேரடி மண்டி விலைகள் மற்றும் கணிப்புகள்.",
+  feature_water_title: "நீர் திட்டம்", feature_water_desc: "நீரை சேமிக்க ஸ்மார்ட் பாசன அட்டவணை.",
+  based_on_soil: "உங்கள் மண் மற்றும் இடத்தின் அடிப்படையில்", see_all: "அனைத்தையும் காண்க →",
+  app_name: "கிருஷிசேது", tagline: "இந்திய விவசாயிகளுக்கான ஸ்மார்ட் விவசாயம்",
+  nav_home: "முகப்பு", nav_crop: "பயிர் திட்டம்", nav_harvest: "அறுவடை",
+  nav_pest: "பூச்சி எச்சரிக்கை", nav_market: "சந்தை", nav_water: "நீர் திட்டம்", nav_profile: "சுயவிவரம்",
+  welcome_msg: "வணக்கம்", login: "உள்நுழை", signup: "பதிவு", logout: "வெளியேறு",
+  email: "மின்னஞ்சல்", password: "கடவுச்சொல்", phone: "தொலைபேசி எண்", farmer_name: "முழு பெயர்",
+  risk_low: "குறைவு", risk_medium: "நடுத்தர", risk_high: "அதிக", loading: "ஏற்றுகிறது…",
+};
+
+const gu: Dict = {
+  explore_features: "સુવિધાઓનું અન્વેષણ કરો", try_it_now: "હમણાં અજમાવો",
+  feature_crop_title: "પાક આયોજન", feature_crop_desc: "માટી અને આબોહવા આધારિત AI ભલામણો.",
+  feature_harvest_title: "લણણી ટ્રેકિંગ", feature_harvest_desc: "શ્રેષ્ઠ લણણી સમયની આગાહી.",
+  feature_pest_title: "જીવાત ચેતવણીઓ", feature_pest_desc: "તમારા વિસ્તાર માટે રીઅલ-ટાઇમ જોખમ ચેતવણીઓ.",
+  feature_market_title: "બજારના ભાવો", feature_market_desc: "લાઇવ મંડી ભાવો અને આગાહી.",
+  feature_water_title: "પાણી આયોજન", feature_water_desc: "પાણી બચાવવા માટે સ્માર્ટ સિંચાઈ સમયપત્રક.",
+  based_on_soil: "તમારી માટી અને સ્થાનના આધારે", see_all: "બધા જુઓ →",
+  app_name: "કૃષિસેતુ", tagline: "ભારતીય ખેડૂતો માટે સ્માર્ટ ખેતી",
+  nav_home: "હોમ", nav_crop: "પાક આયોજન", nav_harvest: "લણણી",
+  nav_pest: "જીવાત ચેતવણી", nav_market: "બજાર", nav_water: "પાણી આયોજન", nav_profile: "પ્રોફાઇલ",
+  welcome_msg: "નમસ્તે", login: "લોગિન", signup: "સાઇન અપ", logout: "લોગઆઉટ",
+  email: "ઈમેલ", password: "પાસવર્ડ", phone: "ફોન નંબર", farmer_name: "પૂરું નામ",
+  risk_low: "ઓછું", risk_medium: "મધ્યમ", risk_high: "ઉચ્ચ", loading: "લોડ થઈ રહ્યું છે…",
+};
+
+const ur: Dict = {
+  explore_features: "خصوصیات دریافت کریں", try_it_now: "ابھی آزمائیں",
+  feature_crop_title: "فصل کی منصوبہ بندی", feature_crop_desc: "مٹی اور آب و ہوا کی بنیاد پر AI تجاویز۔",
+  feature_harvest_title: "کٹائی ٹریکنگ", feature_harvest_desc: "کٹائی کے بہترین وقت کی پیشن گوئی۔",
+  feature_pest_title: "کیڑوں کے الرٹ", feature_pest_desc: "آپ کے علاقے کے لیے ریئل ٹائم خطرے کی وارننگ۔",
+  feature_market_title: "مارکیٹ کی قیمتیں", feature_market_desc: "لائیو منڈی ریٹس اور پیشین گوئیاں۔",
+  feature_water_title: "آبپاشی منصوبہ", feature_water_desc: "پانی بچانے کے لیے اسمارٹ آبپاشی کا شیڈول۔",
+  based_on_soil: "آپ کی مٹی اور مقام کی بنیاد پر", see_all: "سب دیکھیں →",
+  app_name: "کرشی سیتو", tagline: "ہندوستانی کسانوں کے لیے سمارٹ کاشتکاری",
+  nav_home: "ہوم", nav_crop: "فصل کی منصوبہ بندی", nav_harvest: "کٹائی",
+  nav_pest: "کیڑے کی وارننگ", nav_market: "منڈی", nav_water: "آبپاشی منصوبہ", nav_profile: "پروفائل",
+  welcome_msg: "نمستے", login: "لاگ ان", signup: "سائن اپ", logout: "لاگ آؤٹ",
+  email: "ای میل", password: "پاس ورڈ", phone: "فون نمبر", farmer_name: "پورا نام",
+  risk_low: "کم", risk_medium: "درمیانہ", risk_high: "زیادہ", loading: "لوڈ ہو رہا ہے…",
+};
+
+const kn: Dict = {
+  explore_features: "ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಅನ್ವೇಷಿಸಿ", try_it_now: "ಈಗ ಪ್ರಯತ್ನಿಸಿ",
+  feature_crop_title: "ಬೆಳೆ ಯೋಜನೆ", feature_crop_desc: "ಮಣ್ಣು ಮತ್ತು ಹವಾಮಾನ ಆಧಾರಿತ AI ಶಿಫಾರಸುಗಳು.",
+  feature_harvest_title: "ಕೊಯ್ಲು ಟ್ರ್ಯಾಕಿಂಗ್", feature_harvest_desc: "ಸೂಕ್ತ ಕೊಯ್ಲು ಸಮಯವನ್ನು ಊಹಿಸಿ.",
+  feature_pest_title: "ಕೀಟ ಎಚ್ಚರಿಕೆಗಳು", feature_pest_desc: "ನಿಮ್ಮ ಪ್ರದೇಶಕ್ಕೆ ರಿಯಲ್-ಟೈಮ್ ಅಪಾಯದ ಎಚ್ಚರಿಕೆಗಳು.",
+  feature_market_title: "ಮಾರುಕಟ್ಟೆ ಬೆಲೆಗಳು", feature_market_desc: "ಲೈವ್ ಮಂಡಿ ದರಗಳು ಮತ್ತು ಮುನ್ಸೂಚನೆ.",
+  feature_water_title: "ನೀರಿನ ಯೋಜನೆ", feature_water_desc: "ನೀರು ಉಳಿಸಲು ಸ್ಮಾರ್ಟ್ ನೀರಾವರಿ ವೇಳಾಪಟ್ಟಿ.",
+  based_on_soil: "ನಿಮ್ಮ ಮಣ್ಣು ಮತ್ತು ಸ್ಥಳದ ಆಧಾರದ ಮೇಲೆ", see_all: "ಎಲ್ಲವನ್ನೂ ವೀಕ್ಷಿಸಿ →",
+  app_name: "ಕೃಷಿಸೇತು", tagline: "ಭಾರತೀಯ ರೈತರಿಗಾಗಿ ಸ್ಮಾರ್ಟ್ ಕೃಷಿ",
+  nav_home: "ಮುಖಪುಟ", nav_crop: "ಬೆಳೆ ಯೋಜನೆ", nav_harvest: "ಕೊಯ್ಲು",
+  nav_pest: "ಕೀಟ ಎಚ್ಚರಿಕೆ", nav_market: "ಮಾರುಕಟ್ಟೆ", nav_water: "ನೀರಿನ ಯೋಜನೆ", nav_profile: "ಪ್ರೊಫೈಲ್",
+  welcome_msg: "ನಮಸ್ತೆ", login: "ಲಾಗಿನ್", signup: "ಸೈನ್ ಅಪ್", logout: "ಲಾಗ್ ಔಟ್",
+  email: "ಇಮೇಲ್", password: "ಪಾಸ್‌ವರ್ಡ್", phone: "ಫೋನ್ ಸಂಖ್ಯೆ", farmer_name: "ಪೂರ್ಣ ಹೆಸರು",
+  risk_low: "ಕಡಿಮೆ", risk_medium: "ಮಧ್ಯಮ", risk_high: "ಹೆಚ್ಚು", loading: "ಲೋಡ್ ಆಗುತ್ತಿದೆ…",
+};
+
+const or: Dict = {
+  explore_features: "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ ଅନ୍ୱେଷଣ କରନ୍ତୁ", try_it_now: "ବର୍ତ୍ତମାନ ଚେଷ୍ଟା କରନ୍ତୁ",
+  feature_crop_title: "ଫସଲ ଯୋଜନା", feature_crop_desc: "ମାଟି ଏବଂ ଜଳବାୟୁ ଉପରେ ଆଧାରିତ ଏଆଇ ସୁପାରିଶ |",
+  feature_harvest_title: "ଅମଳ ଟ୍ରାକିଂ", feature_harvest_desc: "ସଠିକ୍ ଅମଳ ସମୟ ପୂର୍ବାନୁମାନ କରନ୍ତୁ |",
+  feature_pest_title: "ପୋକ ସତର୍କତା", feature_pest_desc: "ଆପଣଙ୍କ ଅଞ୍ଚଳ ପାଇଁ ରିଅଲ୍-ଟାଇମ୍ ବିପଦ ସତର୍କତା |",
+  feature_market_title: "ବଜାର ମୂଲ୍ୟ", feature_market_desc: "ଲାଇଭ୍ ମଣ୍ଡି ମୂଲ୍ୟ ଏବଂ ପୂର୍ବାନୁମାନ |",
+  feature_water_title: "ଜଳ ଯୋଜନା", feature_water_desc: "ଜଳ ସଞ୍ଚୟ ପାଇଁ ସ୍ମାର୍ଟ ଜଳସେଚନ କାର୍ଯ୍ୟସୂଚୀ |",
+  based_on_soil: "ଆପଣଙ୍କ ମାଟି ଏବଂ ସ୍ଥାନ ଉପରେ ଆଧାର କରି |", see_all: "ସବୁ ଦେଖନ୍ତୁ →",
+  app_name: "କୃଷିସେତୁ", tagline: "ଭାରତୀୟ କୃଷକଙ୍କ ପାଇଁ ସ୍ମାର୍ଟ କୃଷି",
+  nav_home: "ହୋମ୍", nav_crop: "ଫସଲ ଯୋଜନା", nav_harvest: "ଅମଳ",
+  nav_pest: "ପୋକ ସତର୍କତା", nav_market: "ବଜାର", nav_water: "ଜଳ ଯୋଜନା", nav_profile: "ପ୍ରୋଫାଇଲ୍",
+  welcome_msg: "ନମସ୍କାର", login: "ଲଗଇନ୍", signup: "ସାଇନ୍ ଅପ୍", logout: "ଲଗଆଉଟ୍",
+  email: "ଇମେଲ୍", password: "ପାସୱାର୍ଡ", phone: "ଫୋନ୍ ନମ୍ବର", farmer_name: "ପୂରା ନାମ",
+  risk_low: "କମ୍", risk_medium: "ମଧ୍ୟମ", risk_high: "ଉଚ୍ଚ", loading: "ଲୋଡ୍ ହେଉଛି…",
+};
+
+const ml: Dict = {
+  explore_features: "ഫീച്ചറുകൾ പര്യവേക്ഷണം ചെയ്യുക", try_it_now: "ഇപ്പോൾ പരീക്ഷിക്കുക",
+  feature_crop_title: "വിള ആസൂത്രണം", feature_crop_desc: "മണ്ണും കാലാവസ്ഥയും അടിസ്ഥാനമാക്കിയുള്ള AI നിർദ്ദേശങ്ങൾ.",
+  feature_harvest_title: "വിളവെടുപ്പ് ട്രാക്കിംഗ്", feature_harvest_desc: "മികച്ച വിളവെടുപ്പ് സമയം പ്രവചിക്കുക.",
+  feature_pest_title: "കീട മുന്നറിയിപ്പുകൾ", feature_pest_desc: "നിങ്ങളുടെ പ്രദേശത്തിനായുള്ള തത്സമയ അപകട മുന്നറിയിപ്പുകൾ.",
+  feature_market_title: "മാർക്കറ്റ് വിലകൾ", feature_market_desc: "തത്സമയ മണ്ഡി നിരക്കുകളും പ്രവചനവും.",
+  feature_water_title: "ജല പദ്ധതി", feature_water_desc: "വെള്ളം സംരക്ഷിക്കാൻ സ്മാർട്ട് ജലസേചന ഷെഡ്യൂൾ.",
+  based_on_soil: "നിങ്ങളുടെ മണ്ണും സ്ഥലവും അടിസ്ഥാനമാക്കി", see_all: "എല്ലാം കാണുക →",
+  app_name: "കൃഷിസേതു", tagline: "ഇന്ത്യൻ കർഷകർക്കായുള്ള സ്മാർട്ട് കൃഷി",
+  nav_home: "ഹോം", nav_crop: "വിള ആസൂത്രണം", nav_harvest: "വിളവെടുപ്പ്",
+  nav_pest: "കീട മുന്നറിയിപ്പ്", nav_market: "മാർക്കറ്റ്", nav_water: "ജല പദ്ധതി", nav_profile: "പ്രൊഫൈൽ",
+  welcome_msg: "നമസ്തേ", login: "ലോഗിൻ", signup: "സൈൻ അപ്പ്", logout: "ലോഗൗട്ട്",
+  email: "ഇമെയിൽ", password: "പാസ്‌വേഡ്", phone: "ഫോൺ നമ്പർ", farmer_name: "പൂർണ്ണ നാമം",
+  risk_low: "കുറവ്", risk_medium: "ഇടത്തരം", risk_high: "ഉയർന്നത്", loading: "ലോഡ് ചെയ്യുന്നു…",
+};
+
+export const TRANSLATIONS: Record<LangCode, Dict> = {
+  en, hi, bn, mr, te, ta, gu, ur, kn, or, ml,
+};
+
+export function translate(lang: LangCode, key: string): string {
+  return TRANSLATIONS[lang]?.[key] ?? TRANSLATIONS.en[key] ?? key;
+}

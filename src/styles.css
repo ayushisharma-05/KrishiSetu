@@ -1,0 +1,243 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-amber: var(--amber);
+  --color-amber-bg: var(--amber-bg);
+  --color-amber-fg: var(--amber-fg);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
+  --color-danger-fg: var(--danger-fg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-info-fg: var(--info-fg);
+  --color-purple-bg: var(--purple-bg);
+  --color-purple-fg: var(--purple-fg);
+  --font-sans: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali",
+    "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Gujarati",
+    "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Oriya",
+    "Noto Nastaliq Urdu", system-ui, sans-serif;
+}
+
+:root {
+  --background: oklch(0.975 0.012 85);           /* warm cream #F7F2E8 */
+  --foreground: oklch(0.20 0.02 160);            /* deep emerald-ink */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.02 160);
+  --primary: oklch(0.45 0.10 165);               /* deep emerald #0D7A5F */
+  --primary-foreground: oklch(0.985 0.01 85);
+  --primary-dark: oklch(0.32 0.08 168);          /* #064E3B */
+  --primary-light: oklch(0.94 0.04 160);         /* mint tint */
+  --primary-deep: oklch(0.24 0.06 170);          /* darkest emerald */
+  --secondary: oklch(0.93 0.04 85);              /* warm sand */
+  --secondary-foreground: oklch(0.25 0.04 160);
+  --muted: oklch(0.95 0.02 85);                  /* soft cream */
+  --muted-foreground: oklch(0.48 0.02 90);
+  --accent: oklch(0.78 0.13 80);                 /* gold #C9A84C */
+  --accent-foreground: oklch(0.22 0.05 160);
+  --destructive: oklch(0.58 0.20 28);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.89 0.015 85);
+  --input: oklch(0.89 0.015 85);
+  --ring: oklch(0.45 0.10 165);
+
+  --amber: oklch(0.78 0.13 80);                  /* gold */
+  --amber-bg: oklch(0.95 0.05 82);
+  --amber-fg: oklch(0.36 0.08 70);
+  --danger: oklch(0.58 0.20 28);
+  --danger-bg: oklch(0.96 0.03 28);
+  --danger-fg: oklch(0.36 0.13 25);
+  --info: oklch(0.55 0.13 220);
+  --info-bg: oklch(0.95 0.03 220);
+  --info-fg: oklch(0.30 0.10 230);
+  --purple-bg: oklch(0.95 0.04 285);
+  --purple-fg: oklch(0.36 0.13 280);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (min-width: 768px) {
+    html, body { font-size: 15px; }
+  }
+  h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.01em; }
+  button { transition: all 150ms ease; }
+  button:active { transform: scale(0.98); }
+}
+
+/* Utility classes */
+.ks-card {
+  background: var(--color-card);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+.ks-metric {
+  background: var(--color-muted);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+.ks-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 4px;
+  font-size: 10px; font-weight: 500; line-height: 1.4;
+}
+.ks-pulse-green {
+  animation: pulseGreen 1.5s ease-in-out infinite;
+}
+@keyframes pulseGreen {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.62 0.13 165 / 0.4); }
+  50% { box-shadow: 0 0 0 8px oklch(0.62 0.13 165 / 0); }
+}
+.ks-dash-anim {
+  stroke-dasharray: 6 4;
+  animation: dashMove 1.2s linear infinite;
+}
+@keyframes dashMove {
+  to { stroke-dashoffset: -20; }
+}
+
+/* === Dashboard polish utilities === */
+.ks-weather-card {
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ks-weather-card .ks-w-label { font-size: 11px; color: #6b7280; display:flex; align-items:center; gap:6px; }
+.ks-weather-card .ks-w-value { font-size: 28px; font-weight: 600; line-height: 1.1; }
+.ks-weather-card .ks-w-sub { font-size: 11px; color: #6b7280; }
+
+.ks-w-temp { background: #fff5f5; border-left-color: #ef4444; }
+.ks-w-temp .ks-w-value { color: #ef4444; }
+.ks-w-rain { background: #eff6ff; border-left-color: #3b82f6; }
+.ks-w-rain .ks-w-value { color: #3b82f6; }
+.ks-w-hum  { background: #f5f3ff; border-left-color: #8b5cf6; }
+.ks-w-hum .ks-w-value { color: #8b5cf6; }
+.ks-w-wind { background: #f0f9ff; border-left-color: #0ea5e9; }
+.ks-w-wind .ks-w-value { color: #0ea5e9; }
+
+.ks-weather-section {
+  background: #ffffff;
+  border: 0.5px solid #e5e7eb;
+  border-top: 3px solid #059669;
+  border-radius: 12px;
+  padding: 20px;
+}
+.ks-forecast-cell {
+  background: #ffffff;
+  border: 0.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 6px;
+  text-align: center;
+}
+.ks-forecast-cell .emj { font-size: 28px; line-height: 1; margin: 4px 0; }
+
+/* Alert strip gradient */
+.ks-alert-gradient {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e; font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px;
+}
+.ks-live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ef4444; flex-shrink: 0;
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+}
+
+/* Crop recommendation cards */
+.ks-crop-card { border-top-width: 4px; border-top-style: solid; border-radius: 12px; padding: 16px 18px; display:flex; flex-direction:column; gap:10px; border: 1px solid #e5e7eb; }
+.ks-crop-wheat { border-top-color: #059669; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%); }
+.ks-crop-rice  { border-top-color: #0ea5e9; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 60%); }
+.ks-crop-soy   { border-top-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%); }
+
+/* Explore feature tiles */
+.ks-tile {
+  position: relative;
+  min-height: 160px;
+  border-radius: 14px;
+  padding: 18px;
+  color: #fff;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.ks-tile:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+.ks-tile .ks-tile-title { color: #fff; font-size: 16px; font-weight: 600; }
+.ks-tile .ks-tile-desc  { color: rgba(255,255,255,0.85); font-size: 12px; }
+.ks-tile svg { color: #fff; }
+.ks-tile-crop    { background: linear-gradient(135deg, #065f46, #059669); }
+.ks-tile-harvest { background: linear-gradient(135deg, #92400e, #f59e0b); }
+.ks-tile-pest    { background: linear-gradient(135deg, #991b1b, #ef4444); }
+.ks-tile-market  { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
+.ks-tile-water   { background: linear-gradient(135deg, #0c4a6e, #0ea5e9); }
+
+/* Quick metric cards */
+.ks-quick { background:#fff; border:1px solid #e5e7eb; border-left-width:3px; border-radius:12px; padding:16px 18px; transition: border-color 150ms ease; }
+.ks-quick .ks-q-label { font-size:12px; color:#6b7280; display:flex; align-items:center; gap:6px; }
+.ks-quick .ks-q-value { font-size:28px; font-weight:600; margin-top:4px; line-height:1.1; }
+.ks-quick .ks-q-sub   { font-size:11px; color:#6b7280; }
+.ks-quick-irrigation { border-left-color:#0ea5e9; }
+.ks-quick-irrigation .ks-q-icon { color:#0ea5e9; }
+.ks-quick-irrigation .ks-q-value { color:#0c4a6e; }
+.ks-quick-mandi { border-left-color:#059669; }
+.ks-quick-mandi .ks-q-icon { color:#059669; }
+.ks-quick-mandi .ks-q-value { color:#065f46; }
+.ks-quick-pest-low    { border-left-color:#059669; }
+.ks-quick-pest-low    .ks-q-value { color:#065f46; }
+.ks-quick-pest-medium { border-left-color:#f59e0b; }
+.ks-quick-pest-medium .ks-q-value { color:#92400e; }
+.ks-quick-pest-high   { border-left-color:#ef4444; }
+.ks-quick-pest-high   .ks-q-value { color:#991b1b; }
+
+/* Navbar polish */
+.ks-nav-link { color:#374151; }
+.ks-nav-link:hover { color:#059669; }
+.ks-nav-link-active { color:#059669; font-weight:600; position:relative; }
+.ks-nav-link-active::after { content:""; position:absolute; left:12px; right:12px; bottom:-2px; height:2px; background:#059669; border-radius:2px; }
+.ks-login-btn { background:#059669; color:#fff; border-radius:8px; padding:8px 20px; font-size:13px; font-weight:500; }
+.ks-login-btn:hover { background:#047857; }
