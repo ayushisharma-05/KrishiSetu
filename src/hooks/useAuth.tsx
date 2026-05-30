@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { supabase } from "@/integrations/supabase/client";
+
 
 interface AuthCtx {
   user: any | null;
@@ -28,13 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
     
-    // Also listen to Supabase as fallback (for backward compatibility)
-    const { data: sub } = supabase.auth.onAuthStateChange((_evt, s) => {
-      if (s?.user) setUser(s.user);
-    });
-    
     setLoading(false);
-    return () => sub.subscription.unsubscribe();
   }, []);
 
   return (
@@ -48,7 +42,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         setUser(null);
-        await supabase.auth.signOut(); 
       },
     }}>
       {children}
