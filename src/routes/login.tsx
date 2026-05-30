@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Sprout, Eye, EyeOff } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+
 import { useLang } from "@/i18n/LanguageContext";
 import { Button } from "@/components/Button";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
